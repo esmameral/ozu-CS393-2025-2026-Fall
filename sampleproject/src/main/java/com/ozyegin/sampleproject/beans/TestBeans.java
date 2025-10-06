@@ -1,6 +1,5 @@
 package com.ozyegin.sampleproject.beans;
 
-import org.apache.catalina.core.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.ozyegin.sampleproject.SampleprojectApplication;

@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +16,7 @@ public class GreetingServiceImpl implements GreetingService {
 	@Autowired
 	private SimpleDateFormat df;
 	
-	@Autowired
+	@Autowired 
 	@Qualifier("messageBeanEn")
 	private MessageBean messageBean;
 	
