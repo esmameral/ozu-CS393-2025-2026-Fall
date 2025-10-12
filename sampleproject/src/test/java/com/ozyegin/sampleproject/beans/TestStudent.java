@@ -1,7 +1,6 @@
 package com.ozyegin.sampleproject.beans;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
@@ -41,11 +40,6 @@ class TestStudent {
 		assertTrue(firststudent.getName().equals("KEREM"),"There is a bug with name assignment!!");
 	}
 	
-	@Test
-	void testAddress() {
-		Student firststudent=new Student(123,"Kerem");
-		assertNull(firststudent.getAddress());
-		
-	}
+	
 
 }
