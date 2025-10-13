@@ -7,8 +7,8 @@ public class CourseDAOImpl implements CourseDAO {
 
 	@Override
 	public boolean checkQuota(String courseCode) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return true;
 	}
 
 }

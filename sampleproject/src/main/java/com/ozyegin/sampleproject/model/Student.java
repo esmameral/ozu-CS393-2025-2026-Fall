@@ -3,16 +3,21 @@ package com.ozyegin.sampleproject.model;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Student  {
 	private int id;
 
 	private String name;
+	private List<Course> courses = new ArrayList<>();
 
 	public Student(int id, String name) {
 		setId(id);
 		setName(name);
 	}
 
+	public void enrollCourse(Course c) {
+		getCourses().add(c);
+	}
 	public int getId() {
 		return id;
 	}
@@ -31,7 +36,7 @@ public class Student  {
 
 	private String department;
 
-	private List<Course> courses = new ArrayList<>();
+	
 
 	public Student() {
 		super();
