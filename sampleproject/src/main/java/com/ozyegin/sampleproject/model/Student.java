@@ -3,11 +3,27 @@ package com.ozyegin.sampleproject.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
+@Entity
+@Table(name = "TSTUDENT")
 public class Student  {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	private String name;
+	
+	@Column(name = "PROGRAM",length = 100)
+	private String department;
+	
+	@Transient
 	private List<Course> courses = new ArrayList<>();
 
 	public Student(int id, String name) {
@@ -34,7 +50,7 @@ public class Student  {
 		this.name = name;
 	}
 
-	private String department;
+	
 
 	
 
