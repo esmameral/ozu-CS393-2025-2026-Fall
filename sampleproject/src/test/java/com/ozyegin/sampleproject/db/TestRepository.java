@@ -17,6 +17,15 @@ import com.ozyegin.sampleproject.repo.StudentRepository;
 class TestRepository {
 	@Autowired
 	StudentRepository repo;
+	
+	@Test
+	void testInsertNewStudent() {
+		
+		Student student1=new Student("ARDA", "CS");
+		repo.save(student1);
+		
+	}
+	
 
 	@Test
 	void testSave() {

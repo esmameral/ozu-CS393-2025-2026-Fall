@@ -1,6 +1,18 @@
 package com.ozyegin.sampleproject.model;
 
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Course {
+	@Id
 	private int id;
 	
 	private String name;
@@ -9,6 +21,16 @@ public class Course {
 	
 	private int credit;
 	
+	@ManyToOne
+	@JoinColumn(name="INS_ID")
+	private Instructor instructor;
+	
+	@ManyToMany //select Course as owning side
+	@JoinTable(name = "REL_COURSE_STUDENT", 
+	joinColumns = @JoinColumn(name = "COURSE_ID", referencedColumnName = "ID"), 
+	inverseJoinColumns=@JoinColumn(name="STUDENT_ID",referencedColumnName = "ID"))
+
+	private List<Student> students;
 
 	public Course() {
 		super();

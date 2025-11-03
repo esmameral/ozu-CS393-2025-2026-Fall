@@ -5,25 +5,22 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
-@Table(name = "TSTUDENT")
-public class Student  {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-
-	private String name;
+//@Table(name = "TSTUDENT")
+public class Student extends Person{
 	
 	@Column(name = "PROGRAM",length = 100)
 	private String department;
 	
-	@Transient
+	@OneToOne
+	@JoinColumn(name = "TRANSCRIPT_ID")
+	private Transcript transcript;
+	
+	@ManyToMany(mappedBy ="students" )
 	private List<Course> courses = new ArrayList<>();
 
 	public Student(int id, String name) {
@@ -34,24 +31,6 @@ public class Student  {
 	public void enrollCourse(Course c) {
 		getCourses().add(c);
 	}
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	
-
 	
 
 	public Student() {
