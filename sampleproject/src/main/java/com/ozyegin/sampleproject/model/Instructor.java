@@ -1,15 +1,29 @@
 package com.ozyegin.sampleproject.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 @Entity
 public class Instructor extends Person{
 	private String roomNumber;
 	
-	@OneToMany(mappedBy = "instructor")
-	private List<Course> courses;
+	public Instructor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Instructor(String name, String tckn, String roomNumber) {
+		super();
+		setName(name);
+		setTckn(tckn);
+		this.roomNumber = roomNumber;
+	}
+
+	@OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL)
+	private List<Course> courses=new ArrayList<>();
 
 	public String getRoomNumber() {
 		return roomNumber;

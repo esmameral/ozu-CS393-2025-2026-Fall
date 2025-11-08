@@ -1,8 +1,12 @@
 package com.ozyegin.sampleproject.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
@@ -13,6 +17,7 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class Course {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	private String name;
@@ -21,16 +26,16 @@ public class Course {
 	
 	private int credit;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="INS_ID")
 	private Instructor instructor;
 	
-	@ManyToMany //select Course as owning side
+	@ManyToMany (cascade = CascadeType.ALL)//select Course as owning side
 	@JoinTable(name = "REL_COURSE_STUDENT", 
 	joinColumns = @JoinColumn(name = "COURSE_ID", referencedColumnName = "ID"), 
 	inverseJoinColumns=@JoinColumn(name="STUDENT_ID",referencedColumnName = "ID"))
 
-	private List<Student> students;
+	private List<Student> students=new ArrayList<>();
 
 	public Course() {
 		super();
@@ -86,5 +91,21 @@ public class Course {
 		public String toString() {
 			return "Course [id=" + id + ", name=" + name + ", code=" + code + ", credit=" + credit + "]";
 		}
+
+	 public Instructor getInstructor() {
+		 return instructor;
+	 }
+
+	 public void setInstructor(Instructor instructor) {
+		 this.instructor = instructor;
+	 }
+
+	 public List<Student> getStudents() {
+		 return students;
+	 }
+
+	 public void setStudents(List<Student> students) {
+		 this.students = students;
+	 }
 
 }

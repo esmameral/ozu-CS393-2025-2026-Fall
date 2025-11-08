@@ -3,6 +3,7 @@ package com.ozyegin.sampleproject.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -20,7 +21,7 @@ public class Student extends Person{
 	@JoinColumn(name = "TRANSCRIPT_ID")
 	private Transcript transcript;
 	
-	@ManyToMany(mappedBy ="students" )
+	@ManyToMany(mappedBy ="students", cascade = CascadeType.ALL )
 	private List<Course> courses = new ArrayList<>();
 
 	public Student(int id, String name) {

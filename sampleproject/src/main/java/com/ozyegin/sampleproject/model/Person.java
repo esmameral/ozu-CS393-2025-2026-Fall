@@ -34,4 +34,12 @@ public abstract class Person {
 		this.name = name;
 	}
 
+	public String getTckn() {
+		return tckn;
+	}
+
+	public void setTckn(String tckn) {
+		this.tckn = tckn;
+	}
+
 }

@@ -13,5 +13,17 @@ public class Transcript {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private double average;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public double getAverage() {
+		return average;
+	}
+	public void setAverage(double average) {
+		this.average = average;
+	}
 	
 }
