@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.ozyegin.sampleproject.model.Student;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
-
+	
 }

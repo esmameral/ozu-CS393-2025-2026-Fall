@@ -3,8 +3,6 @@ package com.ozyegin.sampleproject.db;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.ozyegin.sampleproject.model.Course;
 import com.ozyegin.sampleproject.model.Instructor;
@@ -23,15 +21,15 @@ class TestSaveData {
 	InstructorRepository insRepo;
 	
 	@Test
-	void testInsertNewStudent() {
-		Instructor ins=new Instructor("Erdem","2978899881","240");
-		Student student1=new Student("JOHN", "CS");
-		Student student2=new Student("KEREM", "EE");
-		Student student3=new Student("MEHMET", "IE");
+	void testSaveInitialData() {
+		Instructor ins=new Instructor("Hasan","2978899881","112");
+		Student student1=new Student("Demet", "CS");
+		Student student2=new Student("Berk", "CE");
+		Student student3=new Student("Canan", "IE");
 
-		Course c1=new Course("CS391", "Web Application programming", 4);
-		Course c2=new Course("CS393", "Backend programming", 4);
-		Course c3=new Course("CS105", "Object Oriented Programming", 6);
+		Course c1=new Course("CS104", "Introduction to Programming", 6);
+		Course c2=new Course("CS202", "Database Management Systems", 6);
+		Course c3=new Course("CS320", "Software Engineering", 6);
 		c1.setInstructor(ins);
 		c2.setInstructor(ins);
 		c3.setInstructor(ins);
