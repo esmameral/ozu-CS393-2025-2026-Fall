@@ -8,17 +8,13 @@ import com.ozyegin.sampleproject.model.Course;
 import com.ozyegin.sampleproject.model.Instructor;
 import com.ozyegin.sampleproject.model.Student;
 import com.ozyegin.sampleproject.repo.CourseRepository;
-import com.ozyegin.sampleproject.repo.InstructorRepository;
-import com.ozyegin.sampleproject.repo.StudentRepository;
 
 @SpringBootTest
 class TestSaveData {
-	@Autowired
-	StudentRepository repo;
+
 	@Autowired
 	CourseRepository courseRepo;
-	@Autowired
-	InstructorRepository insRepo;
+
 	
 	@Test
 	void testSaveInitialData() {
