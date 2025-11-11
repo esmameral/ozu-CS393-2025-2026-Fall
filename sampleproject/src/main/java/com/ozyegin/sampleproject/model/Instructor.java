@@ -5,6 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 @Entity
 public class Instructor extends Person{
@@ -39,6 +40,12 @@ public class Instructor extends Person{
 
 	public void setCourses(List<Course> courses) {
 		this.courses = courses;
+	}
+
+	@Override
+	public String toString() {
+		return "Instructor [roomNumber=" + roomNumber + ", getId()=" + getId() + ", getName()="
+				+ getName() + ", getTckn()=" + getTckn() + "]";
 	}
 	
 	
