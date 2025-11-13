@@ -18,6 +18,7 @@ public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	private int quota;
 	
 	private String name;
 	
@@ -105,6 +106,14 @@ public class Course {
 
 	 public void setStudents(List<Student> students) {
 		 this.students = students;
+	 }
+
+	 public int getQuota() {
+		 return quota;
+	 }
+
+	 public void setQuota(int quota) {
+		 this.quota = quota;
 	 }
 
 }

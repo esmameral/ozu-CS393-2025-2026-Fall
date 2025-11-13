@@ -23,6 +23,11 @@ public class StudentDAOImpl implements StudentDAO {
 		jdbcTemplate.update(sql, s.getId(),s.getName());
 	}
 
+	public void enrollStudent(int studentId, int courseId) {
+		String sql="INSERT INTO REL_COURSE_STUDENT (COURSE_ID, STUDENT_ID) VALUES(?,?)";
+		jdbcTemplate.update(sql, courseId,studentId);
+	}
+	
 	@Override
 	public Student getStudent(int id) {
 		String sql="SELECT ID, NAME FROM STUDENT WHERE ID=?";
