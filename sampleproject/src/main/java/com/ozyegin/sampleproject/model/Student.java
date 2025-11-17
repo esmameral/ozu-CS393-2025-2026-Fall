@@ -3,6 +3,8 @@ package com.ozyegin.sampleproject.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,6 +23,7 @@ public class Student extends Person{
 	@JoinColumn(name = "TRANSCRIPT_ID")
 	private Transcript transcript;
 	
+	@JsonIgnore
 	@ManyToMany(mappedBy ="students", cascade = CascadeType.ALL )
 	private List<Course> courses = new ArrayList<>();
 

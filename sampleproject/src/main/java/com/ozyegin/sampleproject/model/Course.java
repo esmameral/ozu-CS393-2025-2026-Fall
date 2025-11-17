@@ -47,10 +47,11 @@ public class Course {
 		this.name=name;
 		this.credit=credit;
 	}
-	public Course(String code, String name, int credit) {
+	public Course(String code, String name, int credit, int quota) {
 		this.code=code;
 		this.name=name;
 		this.credit=credit;
+		this.quota=quota;
 	}
 
 	public int getCredit() {

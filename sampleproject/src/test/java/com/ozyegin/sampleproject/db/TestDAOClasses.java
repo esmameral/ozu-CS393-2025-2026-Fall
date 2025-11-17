@@ -32,7 +32,7 @@ class TestDAOClasses {
 
 	@Test
 	void test() {	
-		Course course=new Course("CS393", "Backend Programming", 4);
+		Course course=new Course("CS393", "Backend Programming", 4,60);
 		int id=6;
 		when(courseDAO.checkQuota("CS393")).thenReturn(true);
 		

@@ -23,9 +23,9 @@ class TestSaveData {
 		Student student2=new Student("Berk", "CE");
 		Student student3=new Student("Canan", "IE");
 
-		Course c1=new Course("CS104", "Introduction to Programming", 6);
-		Course c2=new Course("CS202", "Database Management Systems", 6);
-		Course c3=new Course("CS320", "Software Engineering", 6);
+		Course c1=new Course("CS104", "Introduction to Programming", 6,60);
+		Course c2=new Course("CS202", "Database Management Systems", 6,60);
+		Course c3=new Course("CS320", "Software Engineering", 6,60);
 		c1.setInstructor(ins);
 		c2.setInstructor(ins);
 		c3.setInstructor(ins);

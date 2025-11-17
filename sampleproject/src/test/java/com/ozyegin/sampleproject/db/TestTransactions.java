@@ -19,12 +19,12 @@ class TestTransactions {
 
 	@Test
 	void testUpdateQuota() {
-		courseDAO.updateQuota(9953);
+		courseDAO.updateQuota(1);
 	}
 
 	@Test
 	void testEnrollStudent() {
-		studentDAO.enrollStudent(10102, 9953);
+		studentDAO.enrollStudent(2,1);
 	}
 
 }
