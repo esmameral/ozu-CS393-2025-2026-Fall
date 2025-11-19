@@ -31,7 +31,7 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value="/students/{studentId}", method=RequestMethod.GET) 
-	public  List<StudentInfo> getAllStudentById(@PathVariable("studentId") int id){
+	public  StudentInfo getAllStudentById(@PathVariable("studentId") int id){
 		return studentService.getStudentById(id);
 		
 	}

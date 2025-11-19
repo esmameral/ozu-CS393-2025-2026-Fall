@@ -22,8 +22,8 @@ public class StudentService {
 		return repository.getStudents();
 	}
 	
-	public List<StudentInfo> getStudentById(int id){
-		return repository.getStudentsById(id);
+	public StudentInfo getStudentById(int id){
+		return repository.getStudentById(id);
 	}
 	
 }

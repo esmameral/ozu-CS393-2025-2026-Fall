@@ -24,7 +24,7 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 	public @ResponseBody List<StudentInfo> getStudents();
 	
 	@Query(value = "Select s from Student s where s.id=?1")
-	public @ResponseBody List<StudentInfo> getStudentsById(int id);
+	public @ResponseBody StudentInfo getStudentById(int id);
 	
 	
 	
