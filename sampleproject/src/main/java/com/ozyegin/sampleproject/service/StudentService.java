@@ -25,5 +25,11 @@ public class StudentService {
 	public StudentInfo getStudentById(int id){
 		return repository.getStudentById(id);
 	}
+
+	public Student save(Student student) {
+		Student s=repository.save(student);
+		return s;
+		
+	}
 	
 }
