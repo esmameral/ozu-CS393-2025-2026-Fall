@@ -56,9 +56,7 @@ public class StudentController {
 	
 	@PostMapping
 	public StudentResponseDTO saveStudent(@RequestBody StudentDTO dto) {
-		Student student=StudentMapper.toStudent(dto);
-		 studentService.save(student);
-		 return StudentMapper.toDto(student);
+		 return studentService.save(dto);
 		
 	}
 }
