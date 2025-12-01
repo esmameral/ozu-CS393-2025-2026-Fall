@@ -22,7 +22,7 @@ public class Instructor extends Person{
 		this.roomNumber = roomNumber;
 	}
 
-	@OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "instructor", cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.DETACH})
 	private List<Course> courses=new ArrayList<>();
 
 	public String getRoomNumber() {

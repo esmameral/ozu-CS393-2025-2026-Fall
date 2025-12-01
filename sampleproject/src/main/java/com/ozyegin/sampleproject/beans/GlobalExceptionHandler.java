@@ -12,7 +12,7 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<String> runtimeExceptionHandler(RuntimeException ex) {
 		String message = "An unexpected error occured";
 		System.out.println(ex.toString());
-		return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<String>(message+" "+ex.toString(), HttpStatus.BAD_REQUEST);
 	}
 
 	@ExceptionHandler(Exception.class)
