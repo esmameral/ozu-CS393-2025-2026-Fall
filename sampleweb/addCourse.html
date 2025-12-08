@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Listing all courses</title>
+</head>
+
+<body>
+    <h3>Input Course Information</h3>
+    <form  method="GET" action="success.html">
+    <table>
+        <tr>
+            <td>Code</td>
+            <td><input type="text" id="code" maxlength="5" minlength="4"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="name" size="100"></td>
+        </tr>
+        <tr>
+            <td>Credit</td>
+            <td><input type="number" id="credit" min="1" max="8"></td>
+        </tr>
+        <tr>
+            <td>Instructor</td>
+            <td>
+                <select id="instructor" size="1">
+                    <option value="HS">Hasan Sozer</option>
+                    <option value="EM">Esma Meral</option>
+                    <option value="RA" selected>Reyhan Aydogan</option>
+                    </select>
+
+           </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Save Course"></td>
+          
+        </tr>
+    </table>
+</form>
+</body>
+
+</html>
