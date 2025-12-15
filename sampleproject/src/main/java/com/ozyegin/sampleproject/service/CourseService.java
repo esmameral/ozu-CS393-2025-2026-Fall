@@ -9,10 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ozyegin.sampleproject.dao.CourseDAO;
 import com.ozyegin.sampleproject.dao.StudentDAO;
+import com.ozyegin.sampleproject.dto.CourseDTO;
 import com.ozyegin.sampleproject.dto.CourseReturnDTO;
 import com.ozyegin.sampleproject.mapper.CourseMapper;
 import com.ozyegin.sampleproject.model.Course;
+import com.ozyegin.sampleproject.model.Instructor;
 import com.ozyegin.sampleproject.repo.CourseRepository;
+import com.ozyegin.sampleproject.repo.InstructorRepository;
 
 @Service
 public class CourseService {
@@ -24,6 +27,9 @@ public class CourseService {
 	
 	@Autowired
 	CourseRepository courseRepository;
+	
+	@Autowired
+	InstructorRepository insRepository;
 	
 	@Autowired
 	CourseMapper courseMapper;
@@ -44,6 +50,19 @@ public class CourseService {
 		}
 		return returnList;
 		
+		
+	}
+
+	public void save(CourseDTO dto) {
+		Course c=new Course();
+		c.setCode(dto.getCode());
+		c.setCredit(dto.getCredit());
+		c.setName(dto.getName());
+		Instructor ins=insRepository.findById(dto.getInstructorId()).get();
+		
+		c.setInstructor(ins);
+		
+		courseRepository.save(c);
 		
 	}
 	
