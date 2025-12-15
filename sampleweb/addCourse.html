@@ -4,41 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Listing all courses</title>
+    <script src="js/scripts.js">
+
+    </script>
 </head>
 
 <body>
     <h3>Input Course Information</h3>
-    <form  method="GET" action="success.html">
-    <table>
-        <tr>
-            <td>Code</td>
-            <td><input name="code" type="text" id="code" maxlength="5" minlength="4"></td>
-        </tr>
-        <tr>
-            <td>Name</td>
-            <td><input name="name" type="text" id="name" size="100"></td>
-        </tr>
-        <tr>
-            <td>Credit</td>
-            <td><input name="credit" type="number" id="credit" min="1" max="8"></td>
-        </tr>
-        <tr>
-            <td>Instructor</td>
-            <td>
-                <select id="instructor" size="1" name="instructor">
-                    <option value="HS">Hasan Sozer</option>
-                    <option value="EM">Esma Meral</option>
-                    <option value="RA" selected>Reyhan Aydogan</option>
-                    </select>
+    <form method="POST" action="success.html" onsubmit="return createCourse()">
+        <table>
+            <tr>
+                <td>Code</td>
+                <td><input name="code" type="text" name="code" id="code" maxlength="5" minlength="4" required></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input name="name" type="text" name="name" id="name" size="100" required></td>
+            </tr>
+            <tr>
+                <td>Credit</td>
+                <td><input name="credit" type="number" name="credit" id="credit" min="1" max="8" required></td>
+            </tr>
+            <tr>
+                <td>Instructor</td>
+                <td>
+                    <div id="instructorDiv">
+                        loading...
+                    </div>
 
-           </td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" value="Save Course"></td>
-          
-        </tr>
-    </table>
-</form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Save Course"></td>
+
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        loadInstructors();
+    </script>
 </body>
 
 </html>
