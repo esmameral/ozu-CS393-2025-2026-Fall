@@ -5,9 +5,11 @@ function loadInstructors() {
         .then((instructors) => {
             console.log(instructors);
             var selectText = "<select id='instructor' name='instructor'>";
-            for (i of instructors) {
-                selectText += "<option value='" + i.id + "'>" + i.name + "</option>";
-            }
+           instructors.forEach(element => {
+            selectText += `<option value='${element.id}'> ${element.name}</option>`;
+           });
+                
+             
             selectText += "</select>";
             document.getElementById("instructorDiv").innerHTML = selectText
         }
